@@ -6,11 +6,29 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Anuncio coche</title>
 
-     {% include 'coches/includes/cabecera.html' %}
+     {% include 'coches/includes/links.html' %}
 </head>
 <body>
-     <h1>{{ coche.modelo }}</h1>
-     <a href="{% url 'modificar' coche.id %}">Modificar</a>
-     <a href="{% url 'borrar' coche.id %}">Borrar</a>
+
+     {% include 'coches/includes/cabecera.html' %}
+
+     <main>
+          <div class="contenedor">
+               <div class="detalles-coche">
+                    <div class="detalles--info">
+                         <p class="parrafo-grande"><span class="marca">{{ coche.marca }}</span>&nbsp;{{ coche.modelo }}</p>
+                         <p>{{ coche.descripcion }}</p>
+                         <p class="info--destacado">{{ coche.kilometros }} km</p>
+                         <p class="info--destacado">{{ coche.precio }}€</p>
+                    </div>
+                    <div class="detalles--imagen">
+                         <img src="/media/{{ coche.imagen }}" alt="">
+                    </div>
+               </div>
+          </div>
+          {% if request.user.is_authenticated %}
+          <!-- Modificar y borrar-->
+          {% endif %}
+     </main>
 </body>
 </html>

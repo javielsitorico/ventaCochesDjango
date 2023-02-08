@@ -1,2 +1,9 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'coches/css/style.css' %}">
+<header>
+     <h1>Compra y Venta de Coches</h1>
+     <nav>
+          <a class="enlace" href="{% url 'listado' %}">Inicio</a>
+          {% if request.user.is_authenticated %}
+               {% include 'coches/includes/coche_crear.html' %}
+          {% endif %}
+     </nav>
+</header>

@@ -6,14 +6,14 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Modificar</title>
 
-     {% include 'coches/includes/cabecera.html' %}
+     {% include 'coches/includes/links.html' %}
 </head>
 <body>
-     <h1>Modificar receta</h1>
+     <h1>Modificar anuncio</h1>
      <form method="post">
           {% csrf_token %}
           {{ form.as_p }}
-          <input type="submit" value="Modificar receta">
+          <input type="submit" value="Modificar anuncio">
      </form>
 </body>
 </html>

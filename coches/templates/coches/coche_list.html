@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Lista de coches</title>
 
-     {% include 'coches/includes/cabecera.html' %}
+     {% include 'coches/includes/links.html' %}
 </head>
+
 <body>
-     
-     <header>
-          <h1>Lista de coches</h1>
-     {% if request.user.is_authenticated  %}
-          {% include 'coches/includes/coche_crear.html' %}
-     {% endif %}
-     </header>
-     
+
+     {% include 'coches/includes/cabecera.html' %}
 
      <main>
           <div class="contenedor">
@@ -27,16 +23,19 @@
                          <div class="anuncio-coche--info">
                               <p class="parrafo-grande"><span class="marca">{{ coche.marca }}</span>&nbsp;{{ coche.modelo }}</p>
                               <p>{{ coche.descripcion }}</p>
-                              <p>{{ coche.kilometros }}</p>
-                              <p>{{ coche.precio }}€</p>
+                              <p class="info--destacado">{{ coche.kilometros }} km</p>
+                              <p class="info--destacado">{{ coche.precio }}€</p>
                          </div>
-                         <a class="enlace" href="{% url 'detalle' coche.id %}">Ver coche</a>                    
+                         <div class="anuncio-coche--enlaces">
+                              <a class="enlace" href="{% url 'detalle' coche.id %}">Ver coche</a>
+                         </div>
                     </div>
                     {% endfor %}
                </div>
-              
+
           </div>
      </main>
-     
+
 </body>
+
 </html>
