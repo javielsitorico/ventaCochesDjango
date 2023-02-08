@@ -104,12 +104,12 @@ header nav {
      flex-direction: column;
      gap: 15px;
 }
-.anuncio-coche--info .parrafo-grande {
+.parrafo-grande {
      font-size: 36px;
      font-weight: 600;
      color: var(--marron);
 }
-.anuncio-coche--info .info--destacado {
+.info--destacado {
      color: var(--marron);
      font-weight: 600;
 }
@@ -123,8 +123,12 @@ header nav {
      display: flex;
 }
 .detalles-coche .detalles--imagen {
-     flex: 3
+     flex: 3;
 }
 .detalles-coche .detalles--info {
-     flex: 7
+     flex: 7;
+
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
 }

@@ -19,7 +19,7 @@
                          <p class="parrafo-grande"><span class="marca">{{ coche.marca }}</span>&nbsp;{{ coche.modelo }}</p>
                          <p>{{ coche.descripcion }}</p>
                          <p class="info--destacado">{{ coche.kilometros }} km</p>
-                         <p class="info--destacado">{{ coche.precio }}€</p>
+                         <p class="info--destacado">{{ coche.precio|floatformat:2  }}€</p>
                     </div>
                     <div class="detalles--imagen">
                          <img src="/media/{{ coche.imagen }}" alt="">
