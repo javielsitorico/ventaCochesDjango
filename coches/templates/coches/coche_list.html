@@ -5,15 +5,38 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Lista de coches</title>
+
+     {% include 'coches/includes/cabecera.html' %}
 </head>
 <body>
-     <h1>Lista de coches</h1>
+     
+     <header>
+          <h1>Lista de coches</h1>
      {% if request.user.is_authenticated  %}
           {% include 'coches/includes/coche_crear.html' %}
      {% endif %}
-     {% for coche in coche_list %}
-          {% if not forloop.first %}<hr>{% endif %}
-          <p>{{ coche.modelo }}</p>
-     {% endfor %}
+     </header>
+     
+
+     <main>
+          <div class="contenedor">
+               <div class="contenedor-anuncios-coches">
+                    {% for coche in coche_list %}
+                    <div class="anuncio-coche">
+                         <img src="/media/{{ coche.imagen }}" alt="">
+                         <div class="anuncio-coche--info">
+                              <p class="parrafo-grande"><span class="marca">{{ coche.marca }}</span>&nbsp;{{ coche.modelo }}</p>
+                              <p>{{ coche.descripcion }}</p>
+                              <p>{{ coche.kilometros }}</p>
+                              <p>{{ coche.precio }}€</p>
+                         </div>
+                         <a class="enlace" href="{% url 'detalle' coche.id %}">Ver coche</a>                    
+                    </div>
+                    {% endfor %}
+               </div>
+              
+          </div>
+     </main>
+     
 </body>
 </html>

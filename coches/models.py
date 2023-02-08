@@ -22,7 +22,7 @@ class Coche(models.Model):
     kilometros = models.IntegerField()
     descripcion = models.TextField()
     precio = models.FloatField()
-    imagen = models.ImageField(verbose_name='foto receta',upload_to='recetario')
+    imagen = models.ImageField(verbose_name='foto coche',upload_to='coches')
     author = models.ForeignKey(User,verbose_name='autor',on_delete=models.CASCADE)
     categorias = models.ManyToManyField(Categoria,verbose_name="categoria")
     created = models.DateTimeField(auto_now_add=True,verbose_name='Fecha de creación ')
