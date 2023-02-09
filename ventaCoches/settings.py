@@ -136,4 +136,4 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 
 # Authentication configuration
 LOGIN_REDIRECT_URL = 'listado'
-LOGIN_REDIRECT_URL = 'listado'
+LOGOUT_REDIRECT_URL = 'listado'

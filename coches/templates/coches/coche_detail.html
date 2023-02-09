@@ -25,10 +25,14 @@
                          <img src="/media/{{ coche.imagen }}" alt="">
                     </div>
                </div>
-          </div>
-          {% if request.user.is_authenticated %}
-          <!-- Modificar y borrar-->
+               {% if request.user.is_authenticated %}
+               <div class="contenedor-enlaces">
+                    <a class="enlace" href="{% url 'modificar' coche.id %}">Modificar anuncio</a>
+                    <a class="enlace" href="{% url 'borrar' coche.id %}">Borrar anuncio</a>
+               </div>
           {% endif %}
+          </div>
+          
      </main>
 </body>
 </html>
