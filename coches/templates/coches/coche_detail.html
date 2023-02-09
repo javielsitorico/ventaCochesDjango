@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+     
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
 
      {% include 'coches/includes/links.html' %}
 </head>
+
 <body>
 
      {% include 'coches/includes/cabecera.html' %}
@@ -20,6 +22,12 @@
                          <p>{{ coche.descripcion }}</p>
                          <p class="info--destacado">{{ coche.kilometros }} km</p>
                          <p class="info--destacado">{{ coche.precio|floatformat:2  }}€</p>
+                         <p class="info--categorias">
+                              {{ coche.categorias }}
+                              {% comment %} {% for categoria in coche.categorias %}
+                                   {{ categoria }}{% if not forloop.last %}, {% endif %}
+                              {% endfor%} {% endcomment %}
+                         </p>
                     </div>
                     <div class="detalles--imagen">
                          <img src="/media/{{ coche.imagen }}" alt="">

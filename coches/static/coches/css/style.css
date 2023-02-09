@@ -7,6 +7,7 @@
      --principal-claro: #ff515d;
      --secundario: #2E86AB;
      --negro: #151515;
+     --gris: #b6b6b6;
      --marron: #33261D;
      --blanco: #f7f7f7;
 }
@@ -37,7 +38,7 @@ header {
      min-height: 70px;
      align-items: center;
      box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
-     background-color: var(--gris);
+     background-color: var(--blanco);
 }
 
 header h1 {
@@ -144,4 +145,48 @@ main {
      display: flex;
      flex-direction: column;
      gap: 20px;
+}
+
+.formulario {
+     width: 100%;
+     max-width: 1200px;
+     margin: 0 auto;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     padding: 20px;
+     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+     border-radius: 20px;
+     background-color: var(--blanco);
+}
+
+.formulario > * input {
+     background-color: var(--blanco);
+     color: var(--negro);
+     font-size: 18px;
+     padding: 5px 15px;
+     border: 1px solid var(--gris);
+     border-radius: 5px;
+     outline: none;
+}
+
+.formulario > * label {
+     background-color: var(--principal);
+     color: var(--blanco);
+     font-weight: 700;
+     font-size: 20px;
+     padding: 5px 15px;
+}
+
+.formulario .contenedor-campos-formulario_largo {
+     display: flex;
+     flex-direction: row;
+     gap: 10px;
+}
+.formulario .contenedor-campos-formulario_largo input {
+     flex: 8;
+}
+.formulario .contenedor-campos-formulario_largo label {
+     flex: 1;
+     text-align: center;
 }

@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Modificar</title>
+     <title>Modificar anuncio</title>
 
      {% include 'coches/includes/links.html' %}
 </head>
+
 <body>
-     <h1>Modificar anuncio</h1>
-     <form method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <input type="submit" value="Modificar anuncio">
-     </form>
+
+     {% include 'coches/includes/cabecera.html' %}
+
+     <main>
+          <form method="post">
+               {% csrf_token %}
+               {{ form.as_p }}
+               <input type="submit" value="Modificar anuncio">
+          </form>
+     </main>
+     
 </body>
 </html>

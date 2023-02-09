@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'ventaCochesDjango',
-        'USER': 'ventaCochesDjango',
+        'USER': 'root',
         'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '3306',

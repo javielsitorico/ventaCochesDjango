@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,71 @@
 
      {% include 'coches/includes/links.html' %}
 </head>
+
 <body>
-     <h1>Añadir Anuncio</h1>
-     <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <input type="submit" value="Añadir anuncio">
-     </form>
+
+     {% include 'coches/includes/cabecera.html' %}
+
+     <main>
+
+          <div class="contenedor">
+               <form class="formulario" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+     
+                    <div class="contenedor-campos-formulario_largo">
+                         <label for="id_marca">Marca:</label>
+                         <input type="text" name="marca" maxlength="200" required id="id_marca">
+                    </div>
+     
+                    <div class="contenedor-campos-formulario_largo">
+                         <label for="id_modelo">Modelo:</label>
+                         <input type="text" name="modelo" maxlength="200" required id="id_modelo">
+                    </div>
+     
+                    <div class="contenedor-campos-formulario_corto">
+                         <label for="id_kilometros">Kilometros:</label>
+                         <input type="number" name="kilometros" required id="id_kilometros">
+                    </div>
+     
+                    <div class="contenedor-campos-formulario_textarea">
+                         <label for="id_descripcion">Descripcion:</label>
+                         <textarea name="descripcion" cols="40" rows="10" required id="id_descripcion"></textarea>
+                    </div>
+                    
+                    <div class="contenedor-campos-formulario_corto">
+                         <label for="id_precio">Precio:</label>
+                         <input type="number" name="precio" step="any" required id="id_precio">
+                    </div>
+     
+                    <div class="contenedor-campos-formulario_imagen">
+                         <label for="id_imagen">Foto coche:</label>
+                         <input type="file" name="imagen" accept="image/*" required id="id_imagen">
+                    </div>
+     
+                    <div class="contenedor-campos-formulario_select">
+                         <label for="id_author">Autor:</label>
+                         <select name="author" required id="id_author">
+                              <option value="" selected>Seleccionar opción</option>
+                              <option value="1">Javier</option>
+                              <option value="2">admin</option>
+                         </select>
+                    </div>
+     
+                    <div class="contenedor-campos-formulario_select">
+                         <label for="id_categorias">Categoria:</label>
+                         <select name="categorias" required id="id_categorias" multiple>
+                              <option value="4">Familiar</option>
+                              <option value="3">Todoterreno</option>
+                              <option value="2">Suv</option>
+                              <option value="1">Urbano</option>
+                         </select>
+                    </div>
+     
+                    <input class="formulario-input-submit" type="submit" value="Añadir anuncio">
+               </form>
+          </div>
+          
+     </main>
+     
 </body>
 </html>
