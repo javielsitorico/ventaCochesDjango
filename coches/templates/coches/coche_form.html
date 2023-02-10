@@ -20,37 +20,40 @@
                <form class="formulario" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
      
-                    <div class="contenedor-campos-formulario_largo">
-                         <label for="id_marca">Marca:</label>
-                         <input type="text" name="marca" maxlength="200" required id="id_marca">
+                    <div class="formulario--contenedor-dos-campos">
+                         <div class="contenedor-campos-formulario contenedor-campos-formulario_largo">
+                              <label for="id_marca">Marca:</label>
+                              <input type="text" name="marca" maxlength="200" required id="id_marca" placeholder="Marca del coche">
+                         </div>   
+                         <div class="contenedor-campos-formulario contenedor-campos-formulario_largo">
+                              <label for="id_modelo">Modelo:</label>
+                              <input type="text" name="modelo" maxlength="200" required id="id_modelo" placeholder="Modelo del coche">
+                         </div>  
                     </div>
+                    
+                    
      
-                    <div class="contenedor-campos-formulario_largo">
-                         <label for="id_modelo">Modelo:</label>
-                         <input type="text" name="modelo" maxlength="200" required id="id_modelo">
-                    </div>
-     
-                    <div class="contenedor-campos-formulario_corto">
+                    <div class="contenedor-campos-formulario contenedor-campos-formulario_corto">
                          <label for="id_kilometros">Kilometros:</label>
                          <input type="number" name="kilometros" required id="id_kilometros">
                     </div>
      
-                    <div class="contenedor-campos-formulario_textarea">
+                    <div class="contenedor-campos-formulario contenedor-campos-formulario_textarea">
                          <label for="id_descripcion">Descripcion:</label>
                          <textarea name="descripcion" cols="40" rows="10" required id="id_descripcion"></textarea>
                     </div>
                     
-                    <div class="contenedor-campos-formulario_corto">
+                    <div class="contenedor-campos-formulario contenedor-campos-formulario_corto">
                          <label for="id_precio">Precio:</label>
                          <input type="number" name="precio" step="any" required id="id_precio">
                     </div>
      
-                    <div class="contenedor-campos-formulario_imagen">
+                    <div class="contenedor-campos-formulario contenedor-campos-formulario_imagen">
                          <label for="id_imagen">Foto coche:</label>
                          <input type="file" name="imagen" accept="image/*" required id="id_imagen">
                     </div>
      
-                    <div class="contenedor-campos-formulario_select">
+                    <div class="contenedor-campos-formulario contenedor-campos-formulario_select">
                          <label for="id_author">Autor:</label>
                          <select name="author" required id="id_author">
                               <option value="" selected>Seleccionar opción</option>
@@ -59,7 +62,7 @@
                          </select>
                     </div>
      
-                    <div class="contenedor-campos-formulario_select">
+                    <div class="contenedor-campos-formulario contenedor-campos-formulario_select">
                          <label for="id_categorias">Categoria:</label>
                          <select name="categorias" required id="id_categorias" multiple>
                               <option value="4">Familiar</option>
