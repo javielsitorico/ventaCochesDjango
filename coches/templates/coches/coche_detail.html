@@ -23,10 +23,9 @@
                          <p class="info--destacado">{{ coche.kilometros }} km</p>
                          <p class="info--destacado">{{ coche.precio|floatformat:2  }}€</p>
                          <p class="info--categorias">
-                              {{ coche.categorias }}
-                              {% comment %} {% for categoria in coche.categorias %}
+                              {% for categoria in coche.categorias.all %}
                                    {{ categoria }}{% if not forloop.last %}, {% endif %}
-                              {% endfor%} {% endcomment %}
+                              {% endfor%}
                          </p>
                     </div>
                     <div class="detalles--imagen">
