@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'ventaCochesDjango',
-        'USER': 'root',
+        'USER': 'ventaCochesDjango',
         'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '3306',
@@ -137,3 +137,12 @@ MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
 # Authentication configuration
 LOGIN_REDIRECT_URL = 'listado'
 LOGOUT_REDIRECT_URL = 'listado'
+
+# Configuracion de correo
+if DEBUG:
+    # Vamos a hacer que los correos que enviemos se guarden en al carpeta correosEnviados,
+    # ya que estamos en la etapa de desarrollo y DEBUG=True
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR,'correosEnviados')
+else:
+    pass

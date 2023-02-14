@@ -1,17 +1,17 @@
-from django.contrib.auth.forms import UserCreationForm
+from .forms import UsuarioCustomCreateForm
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from django import forms
 
 class RegistroView(CreateView):
-     form_class = UserCreationForm
+     form_class = UsuarioCustomCreateForm
      success_url = reverse_lazy('login')
      template_name = 'registration/registro.html'
      
      def get_success_url(self) -> str:
           return reverse_lazy('login') + '?registrado'
      
-     # Asi es como se generarian formularios en tiempo de ejecucion, pudiendo cmodificarlos como queramos
+     # Asi es como se generarian formularios en tiempo de ejecucion, pudiendo modificarlos como queramos
      # def get_form(self, form_class: None):
      #      form = super(RegistroView, self).get_form()
      #      form.fields['_username'].widget = forms.textInput(aatrs={'placeholder':'...', 'style':'background-color: red'})
