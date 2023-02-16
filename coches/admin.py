@@ -9,9 +9,9 @@ class CocheAdmin(admin.ModelAdmin):
      search_fields = ('marca', 'modelo', 'author__username', 'categoria__nombre')
      date_hierarchy = ('created')
      
-class CategoriasAdmin(admin.ModelAdmin):
+class CategoriaAdmin(admin.ModelAdmin):
      readonly_fields=('created', 'updated')
      list_display = ('marca', 'descripcion')
 
 admin.site.register(Coche, CocheAdmin)
-admin.site.register(Categoria)
+admin.site.register(Categoria, CategoriaAdmin)
